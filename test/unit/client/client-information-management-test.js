@@ -135,7 +135,7 @@ describe('Client-side information management', function() {
                     callback(null, resourceValue);
                 });
 
-            function serverHandler() {
+            function serverHandler(data) {
                 serverHandlerCalls++;
             }
 
@@ -150,7 +150,7 @@ describe('Client-side information management', function() {
                     should.not.exist(error);
 
                     setTimeout(function () {
-                        serverHandlerCalls.should.equal(3);
+                        serverHandlerCalls.should.equal(4);
                         done();
                     }, 1000);
                 });
@@ -182,7 +182,7 @@ describe('Client-side information management', function() {
                     should.not.exist(error);
 
                     setTimeout(function () {
-                        serverHandlerCalls.should.equal(3);
+                        serverHandlerCalls.should.equal(4);
                         done();
                     }, 1000);
                 });
@@ -261,8 +261,8 @@ describe('Client-side information management', function() {
                         should.not.exist(error);
 
                         setTimeout(function () {
-                            server1Calls.should.equal(3);
-                            server2Calls.should.equal(2);
+                            server1Calls.should.equal(4);
+                            server2Calls.should.equal(3);
                             done();
                         }, 1000);
                     });
@@ -313,7 +313,7 @@ describe('Client-side information management', function() {
                     should.not.exist(error);
 
                     setTimeout(function () {
-                        serverHandlerCalls.should.equal(1);
+                        serverHandlerCalls.should.equal(2);
                         done();
                     }, 1000);
                 });
